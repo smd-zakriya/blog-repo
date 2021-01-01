@@ -1,0 +1,21 @@
+{% load static %}
+<nav class="navbar navbar-inverse" style="text-indent: 50px; padding-bottom: 2%;">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/"><img id="brand-img" src="{%static "images/KH05.jpg"%}" alt=""></a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a class="glyphicon glyphicon-home" href="/">Home</a></li>
+        <li><a class="glyphicon glyphicon-user" href="/about/">About</a></li>
+        <li><a  class="glyphicon glyphicon-envelope"href="/contact/">Contact_Us</a></li> 
+      </ul>
+    <div>
+        <form class="navbar-form navbar-left"  action="/search">
+            <div class="form-group">
+              <input type="text" class="form-control" name="searched" placeholder="search keywords">
+              <input type="submit" class="btn btn-default" value="Search">
+            </div>    
+        </form>
+    </div>
+    </div>
+  </nav>

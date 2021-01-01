@@ -1,0 +1,96 @@
+body{
+    background: powderblue;
+}
+.context{
+    width: 75%;
+    float: left;
+}
+.sidebar{
+    width: 25%;
+    float: right;
+    background: palegreen;   
+}
+.footer{
+    margin-top: 1%;
+    bottom: 0%;
+    padding-bottom: 1%;
+    height: 4%;
+    width: 100%;
+    text-align: center;
+    background: black;
+    color: blanchedalmond; 
+    font-size: 20px;   
+}
+.intro-image{
+    height: 300px;
+    width: 600px;
+    
+}
+.i-image{
+    margin-left: 1%;
+    height: 300px;
+    width: 1000px;
+    padding: 5px;
+    image-resolution: 500px;
+}
+h1{
+    color: rgba(11, 28, 180, 0.856);
+    font-style: italic;
+    text-align: center;
+}
+h2{
+    color: chocolate;
+}
+.list,.post-details{
+    margin: 2%;
+    margin-top: 0%;
+    padding: 5px;
+    background: white;
+}
+.btn-lg{
+    text-align: center;
+}
+#p_intro{
+    color: purple;
+}
+.page{
+    background: lightblue;
+}
+.page-number{
+    color: lightcoral;
+}
+.shared{
+    text-decoration: underline;
+    font-style: italic;
+    color:violet;
+}
+#brand-img{
+    height: 60px;
+    width: 50px;
+}
+#tag-btn{
+    background: whitesmoke;
+    height: 30px;
+    color: blue;
+}
+#name,#bname,#thanks{
+    font-family: cursive;
+    font-weight: bold;
+}
+#comment-count{
+    color: orange;
+}
+#comment-info{
+    color: mediumblue;
+}
+#comment-body{
+    font-family: cursive;
+}
+#total-char{
+    color: firebrick;
+}
+#total-num{
+    color: blue;
+    font-size: 20px;
+}
+

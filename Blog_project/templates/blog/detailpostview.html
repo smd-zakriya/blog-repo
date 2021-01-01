@@ -1,0 +1,58 @@
+{% extends 'blog/base.html' %}
+{% block title_block %}
+    {{post.title|title}}
+{% endblock title_block %}
+{% block body_block %}
+<h1> {{post.title|title}}</h1><hr>
+<div class=" jumbotron post-details">
+<p id="p_intro">Published on {{post.publish}} by {{post.author}}</p><br>
+<p>{{post.body|linebreaks}}</p><br>
+</div>
+<br><hr>
+<div class="row" style="text-align: center;">    
+        <a href="/share-post/{{post.id}}" class="btn btn-lg btn-success" role="button" >Share Post by Email</a>   
+</div><hr>
+{% with comments.count as comments_count %}
+    <h4 id="comment-count">{{comments_count}} Comment{{comments_count|pluralize}}</h4>
+{% endwith%}
+<div class="container">
+    {% if comments %}
+         {% for comment in comments  %}
+            <p id="comment-info">comment {{ forloop.counter }} by {{ comment.name }} ({{ comment.email }}) on {{ comment.added }} </p>
+            <p id="comment-body">{{ comment.comment|linebreaks }}</p><hr>            
+         {% endfor %}
+    {% else %}
+       <p>No Comments added for this article</p> 
+    {% endif %}
+</div>
+<div class="container">
+    {% if csubmit %}
+        <h2>Your Comment added succesfully</h2>
+    {% else %}
+    <h2>Your comments on this article</h2>
+    <div class="row">
+        <div class="col-md-3">
+            <form method="POST">
+                {{ cform }}
+                {% csrf_token %}
+                &nbsp&nbsp&nbsp<input type="submit" class="btn btn-success" value="Submit Comment">
+            </form>
+        </div>
+    </div>
+     
+    {% endif %}   
+</div><hr>
+{% endblock body_block %}
+{% block side_block %}
+<hr><h2>Similar Posts</h2>
+{% if similar_posts %}
+    <ul>
+    {% for post in similar_posts  %}
+        <li><p><a href="{{ post.get_absolute_url }}">{{ post.title|title }}</a></p></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No Similar Posts found</p>
+{% endif %}
+    
+{% endblock side_block %}
